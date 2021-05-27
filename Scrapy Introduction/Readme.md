@@ -27,3 +27,8 @@ Engines are responsible for co-ordinating between all the components and Schedul
 ```
 conda install -c conda-forge scrapy
 ```
+and dependencies 
+
+```
+pip install protego
+```
