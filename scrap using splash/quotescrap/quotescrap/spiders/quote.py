@@ -3,7 +3,7 @@ from scrapy_splash import SplashRequest
 import time
 class QuoteSpider(scrapy.Spider):
     name = 'quote'
-    allowed_domains = ['www.quotes.toscrape.com/js']
+    
 
     script = '''
     function main(splash, args)
@@ -30,8 +30,8 @@ class QuoteSpider(scrapy.Spider):
         next_page = response.xpath('//li[@class="next"]/a/@href').get()
         if next_page:
             absolute_url = f"http://quotes.toscrape.com{next_page}"
-            yield{
-                SplashRequest(url=absolute_url, callback=self.parse, endpoint="execute", args = {
+            print(absolute_url)
+            yield SplashRequest(url=absolute_url, callback=self.parse, endpoint="execute", args = {
             'lua_source': self.script
             })     
-            }
+            
