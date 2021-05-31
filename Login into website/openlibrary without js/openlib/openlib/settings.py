@@ -1,5 +1,4 @@
-from shutil import which
-# Scrapy settings for quotes_selenium project
+# Scrapy settings for openlib project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -8,14 +7,14 @@ from shutil import which
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'quotes_selenium'
+BOT_NAME = 'openlib'
 
-SPIDER_MODULES = ['quotes_selenium.spiders']
-NEWSPIDER_MODULE = 'quotes_selenium.spiders'
+SPIDER_MODULES = ['openlib.spiders']
+NEWSPIDER_MODULE = 'openlib.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'quotes_selenium (+http://www.yourdomain.com)'
+#USER_AGENT = 'openlib (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -46,14 +45,15 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'quotes_selenium.middlewares.QuotesSeleniumSpiderMiddleware': 543,
+#    'openlib.middlewares.OpenlibSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-DOWNLOADER_MIDDLEWARES = {
-    'scrapy_selenium.SeleniumMiddleware': 800
-}
+#DOWNLOADER_MIDDLEWARES = {
+#    'openlib.middlewares.OpenlibDownloaderMiddleware': 543,
+#}
+
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
 #EXTENSIONS = {
@@ -63,7 +63,7 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    'quotes_selenium.pipelines.QuotesSeleniumPipeline': 300,
+#    'openlib.pipelines.OpenlibPipeline': 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -86,10 +86,3 @@ DOWNLOADER_MIDDLEWARES = {
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
-
-
-SELENIUM_DRIVER_NAME = 'chrome'
-SELENIUM_DRIVER_EXECUTABLE_PATH = which('chromedriver')
-SELENIUM_DRIVER_ARGUMENTS=[]  # '--headless' if using chrome 
-
-FEED_EXPORT_ENCODING = 'utf-8'
