@@ -11,6 +11,7 @@ class OpenlibloginSpider(scrapy.Spider):
         yield FormRequest.from_response(
                 response,
                 formid = 'register',
+                
                 formdata = {
                     "username": "divyanshuboltuzamaki23@gmail.com",
                     "password": "Naruto23@#$",
